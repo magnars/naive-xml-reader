@@ -5,15 +5,12 @@
 
 (declare simplify-element)
 
-(defn conj-vec [vec val]
-  (if (nil? vec) [val] (conj vec val)))
-
 (defn ->val [m ^Element e parent-path list-paths]
   (let [k (snake/->kebab-case-keyword (:tag e))
         path (conj parent-path k)
         v (simplify-element e path list-paths)]
     (if (some #{path} list-paths)
-      (update m k conj-vec v)
+      (update m k (fnil conj []) v)
       (assoc m k v))))
 
 (defn ->map [^Element e path list-paths]
