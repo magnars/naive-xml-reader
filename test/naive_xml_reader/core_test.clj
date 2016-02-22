@@ -18,7 +18,8 @@
 (expect {:a {:b "leaf"}}
         (read-xml "<d><a><b>leaf</b></a></d>"))
 
-(expect {:camel-case nil} (read-xml "<d><camelCase></camelCase></d>"))
+(expect {:it-uses-kebab-case nil}
+        (read-xml "<d><itUses_KebabCASE></itUses_KebabCASE></d>"))
 
 (expect {:a ["1" "2"]} (read-xml "<d><a>1</a><a>2</a></d>"
                                  {:list-paths [[:a]]}))
