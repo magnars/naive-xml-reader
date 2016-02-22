@@ -18,16 +18,18 @@ Start by refering `read-xml`:
 With some very basic XML, things are simple:
 
 ```xml
-<Document>
+<Song>
   <Title>Hello</Title>
   <Artist>Adele Adkins</Artist>
-</Document>
+</Song>
 ```
 
 ```clojure
 (read-xml (slurp "that example above"))
 ;; => {:title "Hello", :artist "Adele Adkins"}
 ```
+
+Note that keys are `:keywordized` and `:kebab-cased`.
 
 #### Enter lists of tags
 
@@ -36,11 +38,11 @@ Otherwise there's no way of knowing the difference between a list with one
 element and a map.
 
 ```xml
-<Document>
+<Song>
   <Title>Hello</Title>
   <Artist>Adele Adkins</Artist>
   <Artist>Greg Kurstin</Artist>
-</Document>
+</Song>
 ```
 
 ```clojure
@@ -49,7 +51,7 @@ element and a map.
 ;; => {:title "Hello", :artist ["Adele Adkins", "Greg Kurstin"]}
 ```
 
-For more examples, see the tests.
+For more examples, [see the tests](test/naive_xml_reader/core_test.clj).
 
 #### But what about attributes?
 
