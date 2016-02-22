@@ -1,4 +1,4 @@
-(defproject naive-xml-reader "0.1.0-SNAPSHOT"
+(defproject naive-xml-reader "0.1.0"
   :description "A naive Clojure library that turns XML into maps."
   :url "https://github.com/magnars/naive-xml-reader"
   :license {:name "Eclipse Public License"

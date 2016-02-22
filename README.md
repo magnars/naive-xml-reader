@@ -3,6 +3,10 @@
 A naive Clojure library that turns XML into maps. Of course, XML documents can't
 be properly represented by maps - they are trees. That's the naive part.
 
+## Install
+
+Add `[naive-xml-reader "0.1.0"]` to `:dependencies` in your `project.clj`.
+
 ## Usage
 
 Start by refering `read-xml`:
